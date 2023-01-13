@@ -51,10 +51,7 @@ cv = CountVectorizer(stop_words="english", max_features=500)
 # The vectorizer will consider 500 most frequent terms. It turns the document matrix into a term doc matrix where each
 # row is a term freq sparse vector for a doc and an email.
 
-try:
-   term_docs = cv.fit_transform(cleaned_emails)
-except ValueError:
-    continue
+term_docs = cv.fit_transform(cleaned_emails)
 
 feature_mapping = cv.vocabulary_
 
